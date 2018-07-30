@@ -1,0 +1,237 @@
+{
+  "name": "vscode-typograf",
+  "displayName": "vscode-typograf",
+  "description": "Helps to automatically place the non-breaking spaces, correct small typos, replace the quotation marks to a correct format and much more.",
+  "keywords": [
+    "typography",
+    "typograf",
+    "enities",
+    "quote",
+    "mdash",
+    "ndash",
+    "nbsp",
+    "типограф",
+    "типографика",
+    "кавычки"
+  ],
+  "version": "0.0.1",
+  "publisher": "rusnasonov",
+  "engines": {
+    "vscode": "^1.25.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-typograf.processSelected"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "vscode-typograf.processSelected",
+        "key": "ctrl+alt+t",
+        "mac": "cmd+alt+t",
+        "when": "editorHasSelection"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vscode-typograf.processSelected",
+        "title": "Run Typograf on selected text"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Typograf configuration",
+        "properties": {
+            "vscode-typograf.autoDetectLocale": {
+                "type": "boolean",
+                "default": true,
+                "order": 9
+            },
+          "vscode-typograf.locale": {
+            "type": "string",
+            "default": "en-US",
+            "order": 10,
+            "enum": [
+              {
+                "value": "be",
+                "description": "Belarusian"
+              },
+              {
+                "value": "bg",
+                "description": "Bulgarian"
+              },
+              {
+                "value": "ca",
+                "description": "Catalan"
+              },
+              {
+                "value": "cs",
+                "description": "Czech"
+              },
+              {
+                "value": "da",
+                "description": "Danish"
+              },
+              {
+                "value": "de",
+                "description": "German"
+              },
+              {
+                "value": "el",
+                "description": "Greek"
+              },
+              {
+                "value": "en-GB",
+                "description": "English, UK"
+              },
+              {
+                "value": "en-US",
+                "description": "English, US; English, Canada"
+              },
+              {
+                "value": "eo",
+                "description": "Esperanto"
+              },
+              {
+                "value": "es",
+                "description": "Spanish"
+              },
+              {
+                "value": "et",
+                "description": "Estonian"
+              },
+              {
+                "value": "fi",
+                "description": "Finnish"
+              },
+              {
+                "value": "fr",
+                "description": "French"
+              },
+              {
+                "value": "ga",
+                "description": "Irish"
+              },
+              {
+                "value": "hu",
+                "description": "Hungarian"
+              },
+              {
+                "value": "it",
+                "description": "Italian"
+              },
+              {
+                "value": "lv",
+                "description": "Latvian"
+              },
+              {
+                "value": "nl",
+                "description": "Dutch"
+              },
+              {
+                "value": "no",
+                "description": "Norwegian"
+              },
+              {
+                "value": "pl",
+                "description": "Polish"
+              },
+              {
+                "value": "ro",
+                "description": "Romanian"
+              },
+              {
+                "value": "ru",
+                "description": "Russian"
+              },
+              {
+                "value": "sk",
+                "description": "Slovak"
+              },
+              {
+                "value": "sl",
+                "description": "Slovenian"
+              },
+              {
+                "value": "sr",
+                "description": "Serbian"
+              },
+              {
+                "value": "sv",
+                "description": "Swedish"
+              },
+              {
+                "value": "tr",
+                "description": "Turkish"
+              },
+              {
+                "value": "uk",
+                "description": "Ukrainian"
+              }
+            ]
+          },
+          "vscode-typograf.type": {
+            "type": "string",
+            "default": "default",
+            "description": "Type of HTML entities",
+            "order": 20,
+            "enum": [
+              {
+                "value": "default",
+                "description": "UTF-8, “A”"
+              },
+              {
+                "value": "name",
+                "description": "As names, &ldquo;A&rdquo;"
+              },
+              {
+                "value": "digit",
+                "description": "As digits, &#8220;A&#8221;"
+              }
+            ]
+          },
+          "vscode-typograf.onlyInvisible": {
+            "type": "boolean",
+            "default": false,
+            "description": "HTML entities only for invisible symbols",
+            "order": 30
+          },
+          "vscode-typograf.enableRules": {
+            "type": "string",
+            "default": "",
+            "description": "Specify [rules](https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md) to enable, separated by commas.\nExample: `common/nbsp/replaceNbsp,ru/optalign/*`",
+            "order": 40
+          },
+          "vscode-typograf.disableRules": {
+            "type": "string",
+            "default": "",
+            "description": "Specify [rules](https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md) to disable, separated by commas.\nExample: `common/space/afterPunctuation,common/space/trimLeft`",
+            "order": 50
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "tslint": "^5.8.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "franc": "^4.0.0",
+    "langs": "^2.0.0",
+    "typograf": "^6.7.2"
+  }
+}
