@@ -16,6 +16,10 @@
   ],
   "version": "0.0.1",
   "publisher": "rusnasonov",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rusnasonov/vscode-typograf.git"
+  },
   "engines": {
     "vscode": "^1.25.0"
   },
