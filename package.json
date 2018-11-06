@@ -175,22 +175,9 @@
           "vscode-typograf.type": {
             "type": "string",
             "default": "default",
-            "description": "Type of HTML entities",
+            "description": "Type of HTML entities. Valid values are 'default', 'name' and 'digit'",
             "order": 20,
-            "enum": [
-              {
-                "value": "default",
-                "description": "UTF-8, “A”"
-              },
-              {
-                "value": "name",
-                "description": "As names, &ldquo;A&rdquo;"
-              },
-              {
-                "value": "digit",
-                "description": "As digits, &#8220;A&#8221;"
-              }
-            ]
+            "enum": ["default", "name", "digit"]
           },
           "vscode-typograf.onlyInvisible": {
             "type": "boolean",
