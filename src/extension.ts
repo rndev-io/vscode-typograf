@@ -45,11 +45,11 @@ export function activate(context: vscode.ExtensionContext) {
         const settings = vscode.workspace.getConfiguration('vscode-typograf');
 
         if (editor) {
-            let locale = settings.get('vscode-typograf.locale', "en-US");
+            let locale = settings.get('locale', "en-US");
             let text = editor.document.getText(editor.selection);
             let message = 'default ' + locale;
 
-            if (settings.get('vscode-typograf.autoDetectLocale', true)) {
+            if (settings.get('autoDetectLocale', true)) {
                 let detected = franc(text);
                 if (detected !== 'und') {
                     let l = langs.where("3", detected);
@@ -69,11 +69,11 @@ export function activate(context: vscode.ExtensionContext) {
             const t = new Typograf({
                 locale: locale,
                 htmlEntity: {
-                    type: settings.get('vscode-typograf.type', 'default'),
-                    onlyInvisible: settings.get('vscode-typograf.onlyInvisible', "")
+                    type: settings.get('type', 'default'),
+                    onlyInvisible: settings.get('onlyInvisible', "")
                 },
-                enableRule: prepareRules(settings.get('vscode-typograf.enableRules', "")),
-                disableRule: prepareRules(settings.get('vscode-typograf.disableRules', ""))
+                enableRule: prepareRules(settings.get('enableRules', "")),
+                disableRule: prepareRules(settings.get('disableRules', ""))
             });
 
             let result = t.execute(text);
