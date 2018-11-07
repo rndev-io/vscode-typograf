@@ -9,7 +9,7 @@
     "типограф",
     "кавычки"
   ],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "rusnasonov",
   "repository": {
     "type": "git",
@@ -44,23 +44,57 @@
       {
         "title": "Typograf configuration",
         "properties": {
-            "vscode-typograf.autoDetectLocale": {
-                "type": "boolean",
-                "default": true,
-                "order": 9
-            },
+          "vscode-typograf.autoDetectLocale": {
+            "type": "boolean",
+            "default": true,
+            "order": 9
+          },
           "vscode-typograf.locale": {
             "type": "string",
             "default": "en-US",
             "order": 10,
-            "enum": ["be","bg","ca","cs","da","de","el","en-GB","en-US","eo","es","et","fi","fr","ga","hu","it","lv","nl","no","pl","ro","ru","sk","sl","sr","sv","tr","uk"]
+            "enum": [
+              "be",
+              "bg",
+              "ca",
+              "cs",
+              "da",
+              "de",
+              "el",
+              "en-GB",
+              "en-US",
+              "eo",
+              "es",
+              "et",
+              "fi",
+              "fr",
+              "ga",
+              "hu",
+              "it",
+              "lv",
+              "nl",
+              "no",
+              "pl",
+              "ro",
+              "ru",
+              "sk",
+              "sl",
+              "sr",
+              "sv",
+              "tr",
+              "uk"
+            ]
           },
           "vscode-typograf.type": {
             "type": "string",
             "default": "default",
             "description": "Type of HTML entities. Valid values are 'default', 'name' and 'digit'",
             "order": 20,
-            "enum": ["default", "name", "digit"]
+            "enum": [
+              "default",
+              "name",
+              "digit"
+            ]
           },
           "vscode-typograf.onlyInvisible": {
             "type": "boolean",
