@@ -4,7 +4,7 @@ Helps to automatically place the non-breaking spaces, correct small typos, repla
 
 ## Features
 
-Select text and press <kbd>command</kbd> + <kbd>alt</kbd> + <kbd>T</kbd> (<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>T</kbd> on Windows/Linux).
+Select text and press <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>T</kbd>.
 
 
 | before                                                       	| after                                            	|
