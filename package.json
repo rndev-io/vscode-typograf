@@ -30,7 +30,7 @@
       {
         "command": "vscode-typograf.processSelected",
         "key": "ctrl+alt+t",
-        "mac": "cmd+alt+t",
+        "mac": "ctrl+alt+t",
         "when": "editorHasSelection"
       }
     ],
